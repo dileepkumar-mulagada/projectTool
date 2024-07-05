@@ -32,7 +32,7 @@ connect('mongodb+srv://dileepkumar30827:Mulagada%233@cluster0.th8hl8z.mongodb.ne
 app.use('/events', eventRoute);
 // app.use('/users',userRoute)
 
-app.post("/",async(req,res)=>{
+app.post("https://project-tool-q4cq.onrender.com/",async(req,res)=>{
     console.log("working")
     const{email,password}=req.body
     
