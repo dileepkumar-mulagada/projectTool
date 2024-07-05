@@ -1,5 +1,3 @@
-// client/src/Update.jsx
-
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -12,7 +10,7 @@ function Update() {
 
     useEffect(() => {
         axios
-            .get(`https://projecttool-ujef.onrender.com/events/${id}`)
+            .get(`https://project-tool.netlify.app/events/${id}`)
             .then(response => {
                 setEvent(response.data);
                 setIsLoading(false);
@@ -42,7 +40,7 @@ function Update() {
         };
 
         axios
-            .put(`https://projecttool-ujef.onrender.com/events/${id}`, updatedEvent)
+            .put(`https://project-tool.netlify.app/events/${id}`, updatedEvent)
             .then(() => {
                 // Handle successful update
                 alert('Event updated successfully!');
