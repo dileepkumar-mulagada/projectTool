@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'https://projecttool-uuyp.onrender.com';
+const baseURL = 'https://task-management-37bo.onrender.com';
 
 // Register a new user or login
 export const Auth = async (userData, endpoint) => {
