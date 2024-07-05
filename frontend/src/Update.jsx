@@ -10,7 +10,7 @@ function Update() {
 
     useEffect(() => {
         axios
-            .get(`https://project-tool.netlify.app/events/${id}`)
+            .get(`https://projecttool-ujef.onrender.com/${id}`)
             .then(response => {
                 setEvent(response.data);
                 setIsLoading(false);
@@ -40,7 +40,7 @@ function Update() {
         };
 
         axios
-            .put(`https://project-tool.netlify.app/events/${id}`, updatedEvent)
+            .put(`https://projecttool-ujef.onrender.com/${id}`, updatedEvent)
             .then(() => {
                 // Handle successful update
                 alert('Event updated successfully!');
