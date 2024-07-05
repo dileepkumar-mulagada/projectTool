@@ -12,7 +12,7 @@ function App() {
     const [isSuccess, setIsSuccess] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/events')
+        axios.get('https://projecttool-ujef.onrender.com/events')
             .then(response => {
                 setEvents(response.data);
             })
@@ -37,7 +37,7 @@ function App() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/events', formData)
+        axios.post('https://projecttool-ujef.onrender.com/events', formData)
             .then(response => {
                 console.log('Event added successfully:', response.data);
                 setFormData({
@@ -56,7 +56,7 @@ function App() {
     
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:4000/events/${id}`)
+        axios.delete(`https://projecttool-ujef.onrender.com/events/${id}`)
             .then(response => {
                 console.log('Event deleted successfully:', response.data);
                 setIsSuccess(true);
