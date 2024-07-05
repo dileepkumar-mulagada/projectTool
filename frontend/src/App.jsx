@@ -10,7 +10,7 @@ function App() {
     const [isSuccess, setIsSuccess] = useState(false);
 
     useEffect(() => {
-        axios.get('https://project-tool.netlify.app//events')
+        axios.get('https://project-tool.netlify.app/events')
             .then(response => {
                 setEvents(response.data);
             })
@@ -35,7 +35,7 @@ function App() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://project-tool.netlify.app//events', formData)
+        axios.post('https://project-tool.netlify.app/events', formData)
             .then(response => {
                 console.log('Event added successfully:', response.data);
                 setFormData({
@@ -54,7 +54,7 @@ function App() {
     
 
     const handleDelete = (id) => {
-        axios.delete(`https://project-tool.netlify.app//events/${id}`)
+        axios.delete(`https://project-tool.netlify.app/events/${id}`)
             .then(response => {
                 console.log('Event deleted successfully:', response.data);
                 setIsSuccess(true);
