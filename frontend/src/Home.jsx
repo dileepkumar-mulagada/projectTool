@@ -9,7 +9,7 @@ const Home = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        axios.get('https://project-tool-usax.onrender.com/events')
+        axios.get('https://projecttool-ujef.onrender.com/events')
             .then(response => {
                 setEvents(response.data);
                 console.log(response.data);
