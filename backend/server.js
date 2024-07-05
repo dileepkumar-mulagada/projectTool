@@ -3,7 +3,7 @@ import cors from 'cors';
 import { connect } from 'mongoose';
 import collection from './mongo.js'
 import eventRoute from './routes/eventRoute.js';
-import userRoute from './routes/userRoute.js';
+
 
 const app = express();
 const port = 4000;
