@@ -10,9 +10,12 @@ import userRoute from './routes/userRoute.js';
 const app = express();
 const port = 4000;
 
-app.use(cors({
-    origin: 'https://project-tool-q4cq.onrender.com/'
-}));
+const corsOptions = {
+    origin: 'https://project-tool-q4cq.onrender.com/',
+    optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions));
 
 app.use(json());
 
