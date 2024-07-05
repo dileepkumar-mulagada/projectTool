@@ -1,9 +1,8 @@
-// server/controllers/eventCon.js
 
 import Event from '../models/eventSchema.js';
 
 const eventController = {
-    // Create a new event
+
     createEvent: async (req, res) => {
         try {
             const { title, status, date, Manager } = req.body;
@@ -22,7 +21,7 @@ const eventController = {
         }
     },
 
-    // Get all events
+    
     getAllEvents: async (req, res) => {
         try {
             const events = await Event.find();
