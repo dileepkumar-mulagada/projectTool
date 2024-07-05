@@ -8,11 +8,6 @@ import eventRoute from './routes/eventRoute.js';
 const app = express();
 const port = 4000;
 
-const corsOptions = {
-    origin: 'https://project-tool-q4cq.onrender.com/',
-    
-}
-
 app.use(cors());
 
 app.use(json());
