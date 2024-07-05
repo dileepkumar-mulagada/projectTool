@@ -12,7 +12,7 @@ const port = 4000;
 
 const corsOptions = {
     origin: 'https://project-tool-q4cq.onrender.com/',
-    optionsSuccessStatus: 200
+
 }
 
 app.use(cors(corsOptions));
