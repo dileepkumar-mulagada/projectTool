@@ -12,7 +12,7 @@ function Update() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:4000/events/${id}`)
+            .get(`https://projecttool-ujef.onrender.com/events/${id}`)
             .then(response => {
                 setEvent(response.data);
                 setIsLoading(false);
@@ -42,7 +42,7 @@ function Update() {
         };
 
         axios
-            .put(`http://localhost:4000/events/${id}`, updatedEvent)
+            .put(`https://projecttool-ujef.onrender.com/events/${id}`, updatedEvent)
             .then(() => {
                 // Handle successful update
                 alert('Event updated successfully!');
