@@ -29,10 +29,15 @@ const Home = () => {
                                 navbar-light bg-light">
                     <div className="container my-2">
                         <h4>Project Management</h4>
+                        <div>
                         <Link className="btn btn-primary ml-auto"
                             to="/dashboard">
                             Dashboard
                         </Link>
+                        <Link className="btn btn-primary mx-3" to="/">
+                                Log Out
+                        </Link>
+                        </div>
                     </div>
                 </nav>
                 <div className="row my-3">
