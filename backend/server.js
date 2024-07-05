@@ -1,5 +1,3 @@
-// In server/server.js, initialize the server and connect to MongoDB.
-
 import express, { json } from 'express';
 import cors from 'cors';
 import { connect } from 'mongoose';
@@ -28,9 +26,7 @@ connect('mongodb+srv://dileepkumar30827:Mulagada%233@cluster0.th8hl8z.mongodb.ne
     .catch((error) =>
         console.error('Failed to connect to MongoDB', error));
 
-// Define your routes here
 app.use('/events', eventRoute);
-// app.use('/users',userRoute)
 
 app.post("/",async(req,res)=>{
     console.log("working")
