@@ -30,6 +30,7 @@ app.use('/events', eventRoute);
 // app.use('/users',userRoute)
 
 app.post("/",async(req,res)=>{
+    console.log("working")
     const{email,password}=req.body
     
     try{
