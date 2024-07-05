@@ -15,7 +15,7 @@ function Login() {
 
         try{
 
-            await axios.post("http://localhost:4000/signup",{
+            await axios.post("https://projecttool-ujef.onrender.com/signup",{
                 email,password
             })
             .then(res=>{
