@@ -1,4 +1,3 @@
-// server/models/eventSchema.js is the schema.
 
 import { Schema, model } from 'mongoose';
 
