@@ -9,7 +9,7 @@ const Home = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        axios.get('https://project-tool.netlify.app//events')
+        axios.get('https://project-tool.netlify.app/events')
             .then(response => {
                 setEvents(response.data);
                 console.log(response.data);
