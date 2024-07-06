@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 function App() {
     const [events, setEvents] = useState([]);
     const [isSuccess, setIsSuccess] = useState(false);
+
     useEffect(() => {
         axios.get('https://projecttool-ujef.onrender.com/events')
             .then(response => {
@@ -142,7 +143,6 @@ function App() {
                                     <input onChange={handleInputChange}
                                         value={formData.status} type="text"
                                         className="form-control" name="status"
-                                        value="Yet to Start"
                                         id="inputAddress2" placeholder="Enter Status" />
                                 </div>
                                 <div className="form-group mt-2">
