@@ -3,12 +3,11 @@ import axios from 'axios';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { useNavigate,Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function App() {
     const [events, setEvents] = useState([]);
     const [isSuccess, setIsSuccess] = useState(false);
-    const history=useNavigate();
     useEffect(() => {
         axios.get('https://projecttool-ujef.onrender.com/events')
             .then(response => {
@@ -45,7 +44,6 @@ function App() {
                     date: ''
                 });
                 setIsSuccess(true);
-                history('/dashboard')
             })
             .catch(error => {
                 setIsSuccess(false);
