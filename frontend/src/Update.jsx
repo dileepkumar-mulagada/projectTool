@@ -1,16 +1,16 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useNavigate,Link, useParams } from 'react-router-dom';
 
 function Update() {
     const { id } = useParams();
-
+    const history=useNavigate();
     const [event, setEvent] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         axios
-            .get(`https://projecttool-ujef.onrender.com/${id}`)
+            .get(`https://projecttool-ujef.onrender.com/events/${id}`)
             .then(response => {
                 setEvent(response.data);
                 setIsLoading(false);
@@ -40,10 +40,12 @@ function Update() {
         };
 
         axios
-            .put(`https://projecttool-ujef.onrender.com/${id}`, updatedEvent)
+            .put(`https://projecttool-ujef.onrender.com/events/${id}`, updatedEvent)
             .then(() => {
                 // Handle successful update
                 alert('Event updated successfully!');
+                history("/dashboard")
+
             })
             .catch(error => {
                 // Handle error
@@ -76,6 +78,7 @@ function Update() {
                                     id="inputAddress"
                                     placeholder="Event Title"
                                     defaultValue={event.title}
+                                    required
                                     onChange={e => setUpdatedTitle(e.target.value)}
                                 />
                             </div>
@@ -86,8 +89,9 @@ function Update() {
                                     className="form-control"
                                     name="status"
                                     id="inputAddress2"
-                                    placeholder="Enter Status"
+                                    placeholder="Update Status"
                                     defaultValue={event.status}
+                                    required
                                     onChange={e => setUpdatedStatus(e.target.value)}
                                 />
                             </div>
@@ -97,21 +101,23 @@ function Update() {
                                     type="text"
                                     className="form-control"
                                     name="Manager"
-                                    id="inputAddress2"
+                                    id="inputAddress3"
                                     placeholder="Enter Manager Name"
-                                    defaultValue={event.Manager}
+                                    defaultValue={event.location}
+                                    required
                                     onChange={e => setUpdatedManager(e.target.value)}
                                 />
                             </div>
                             <div className="form-group mt-2">
-                                <label htmlFor="inputAddress2">Date</label>
+                                <label htmlFor="inputAddress2">Due Date</label>
                                 <input
                                     type="date"
                                     className="form-control"
                                     name="date"
-                                    id="inputAddress2"
+                                    id="inputAddress4"
                                     placeholder="Enter Date"
                                     defaultValue={event.date}
+                                    required
                                     onChange={e => setUpdatedDate(e.target.value)}
                                 />
                             </div>
