@@ -46,15 +46,17 @@ function Login() {
             <h1>Signup</h1>
 
             <form action="POST">
+                
                 <input type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Email"  />
-                <input type="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password" />
+                <div style={{marginTop:'10px', marginBottom: '10px' }}>
+                <input type="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password"  />
+                </div>
                 <input type="submit" onClick={submit} />
 
             </form>
 
             <br />
             <p>OR</p>
-            <br />
 
             <Link to="/">Login Page</Link>
 
