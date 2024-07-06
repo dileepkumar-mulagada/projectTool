@@ -3,12 +3,12 @@ import axios from 'axios';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { Link } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 function App() {
     const [events, setEvents] = useState([]);
     const [isSuccess, setIsSuccess] = useState(false);
-
+    const history=useNavigate();
     useEffect(() => {
         axios.get('https://projecttool-ujef.onrender.com/events')
             .then(response => {
@@ -45,6 +45,7 @@ function App() {
                     date: ''
                 });
                 setIsSuccess(true);
+                history('/dashboard')
             })
             .catch(error => {
                 setIsSuccess(false);
@@ -143,6 +144,7 @@ function App() {
                                     <input onChange={handleInputChange}
                                         value={formData.status} type="text"
                                         className="form-control" name="status"
+                                        value="Yet to Start"
                                         id="inputAddress2" placeholder="Enter Status" />
                                 </div>
                                 <div className="form-group mt-2">
@@ -153,7 +155,7 @@ function App() {
                                         id="inputAddress2" placeholder="Enter Manager Name" />
                                 </div>
                                 <div className="form-group mt-2">
-                                    <label htmlFor="inputAddress2">Date</label>
+                                    <label htmlFor="inputAddress2">Deadline</label>
                                     <input onChange={handleInputChange}
                                         value={formData.date} type="date"
                                         className="form-control" name="date"
